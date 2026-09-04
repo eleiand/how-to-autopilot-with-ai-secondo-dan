@@ -216,7 +216,7 @@ a:hover{text-decoration:underline}
 .own .hole{background:var(--accent);color:#fff;border-radius:6px;padding:0 6px;font-weight:600}
 .copy{display:inline-flex;align-items:center;gap:8px;margin:18px auto 0;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:12px 22px;font:600 17px -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;cursor:pointer}
 .copy:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.own .tip{color:var(--ink-2);font-size:16px;margin-top:14px;text-align:center}
+.own .tip,.tip{color:var(--ink-2);font-size:16px;margin:18px auto 0;text-align:center;max-width:640px}
 
 
 /* real rules */
@@ -1020,8 +1020,16 @@ Sections, in this order:
 Rules: draw all pictures in code, no photo files. Animations start from a visible state and switch off if the reader has reduce motion on. Every card is the same shape. Keep it under one file. When done, put it on GitHub Pages and give me the link.</pre>
       </div>
       <button class="copy" id="copyBtn" type="button">Copy the prompt</button>
-      <p class="tip">Paste it into the Claude app. Then just talk. "Make it simpler." "Change the colour." "Add a job." One sentence at a time.</p>
     </div>
+    <p class="sub" style="margin-top:48px">How to run it. The whole page is one file called index.html. This is how it gets made and put online</p>
+    <div class="gh" style="grid-template-columns:repeat(4,1fr)">
+      <div class="tile"><div class="big">1</div><h3>Make a folder</h3><p>On your Mac, make an empty folder. Call it "my-page". This is where the file will live.</p></div>
+      <div class="tile"><div class="big">2</div><h3>Open Claude Code in it</h3><p>Open Terminal, type "cd " then drag the folder into the window, press Enter. Then type "claude" and press Enter. Now you are talking to Claude inside that folder.</p></div>
+      <div class="tile"><div class="big">3</div><h3>Paste the prompt</h3><p>Paste, press Enter, and wait a few minutes. Claude writes index.html in your folder. Double click it to see the page on your Mac before it goes anywhere.</p></div>
+      <div class="tile"><div class="big">4</div><h3>Say yes to GitHub</h3><p>Claude asks to put it online. Say yes. It makes the GitHub folder, uploads the file and hands you a link like yourname.github.io/my-page. Send that link to anyone.</p></div>
+    </div>
+    <p class="tip">Then just talk. "Make it simpler." "Change the colour." "Add a job." One sentence at a time, and the link updates in about thirty seconds.</p>
+    <p class="tip">Prefer no Terminal? Paste the prompt into the Claude desktop app in Cowork instead. It writes the same index.html into a folder you pick. You then upload that one file to GitHub yourself using steps 1 to 4 in the GitHub section above.</p>
   </div>
 </section>
 
