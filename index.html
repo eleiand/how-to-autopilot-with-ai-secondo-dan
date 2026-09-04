@@ -195,6 +195,19 @@ a:hover{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){.bg i{animation:none}}
 @media (max-width:760px){.intro{padding:24px 22px;font-size:18px}.bg i{filter:blur(60px)}}
 
+
+/* the long scroll gag */
+.gag{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:40px 22px}
+.gag .t{font-size:clamp(38px,7vw,86px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;text-wrap:balance;max-width:14em}
+.gag .t.small{font-size:clamp(24px,3vw,34px);color:var(--ink-2);font-weight:500;letter-spacing:-0.01em}
+.gag .story{max-width:620px;margin:28px auto 0;background:var(--card);border-radius:28px;padding:30px 32px;text-align:left;font-size:19px;line-height:1.55}
+.gag .story p{margin:0 0 12px}
+.gag .story p:last-child{margin:0}
+.gag .story b{display:block;margin-bottom:6px}
+.gag .end{margin-top:28px;color:var(--ink-2);font-size:17px}
+.pre.t,.pre.story{transform:translateY(40px) scale(.96)}
+.in.t,.in.story{transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+
 /* three steps */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
 .tile{background:var(--card);border-radius:24px;padding:30px 26px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.05)}
@@ -575,6 +588,27 @@ jobs:
 </section>
 
 
+<section class="gag" aria-hidden="true"></section>
+<section class="gag" aria-hidden="true"></section>
+<section class="gag"><div class="t">Still there?</div></section>
+<section class="gag"><div class="t">In case you are wondering</div></section>
+<section class="gag"><div class="t">how I did this</div></section>
+<section class="gag"><div class="t">keep</div></section>
+<section class="gag"><div class="t">scrolling</div></section>
+<section class="gag">
+  <div>
+    <div class="t">Okay, just kidding.</div>
+    <div class="story">
+      <p><b>How this page was made</b>I did not design it. I did not write a line of code. I sat in a chat with Claude and said what I wanted, in plain words, the way I would say it to a friend.</p>
+      <p>Claude wrote the whole page as one file. It drew the phone, the clock and the Mac window in code, so there are no photos to find. It made the cursor move and the cards rise. Then it put the page on GitHub and handed me a link.</p>
+      <p>Every change after that was one sentence. "Make it simpler." "Style it like Apple." "Add an intro." "Name it this." A minute later, the link was updated.</p>
+      <p>One evening. One chat. No designer, no developer, no photos, and nothing paid beyond the Claude plan I already had.</p>
+      <p>That is the whole point of this page. If it can build the page, it can do your boring jobs too.</p>
+    </div>
+    <div class="end">Now go and set up the first job.</div>
+  </div>
+</section>
+
 <script>
 (function(){
   var mac=document.getElementById('mac'), box=mac&&mac.parentNode;
@@ -584,7 +618,7 @@ jobs:
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.tile,.blank,.job,.step5,.habit,.rail,.bubble');
+  var els = document.querySelectorAll('.tile,.blank,.job,.step5,.habit,.rail,.bubble,.gag .t,.gag .story,.gag .end');
   var vh = window.innerHeight;
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
