@@ -10,23 +10,23 @@
 <style>
 :root{
   --bg:#ffffff; --alt:#f5f5f7; --ink:#1d1d1f; --ink-2:#6e6e73; --line:#d2d2d7;
-  --card:rgba(255,255,255,.62); --solid:#ffffff; --glass-line:rgba(255,255,255,.65); --link:#0066cc; --accent:#7B61D9; --g1:#4285F4; --g2:#9B72CB; --g3:#D96570; --accent-grad:linear-gradient(135deg,#4285F4 0%,#9B72CB 55%,#D96570 100%); --dark-bg:rgba(0,0,0,.84); --dark-card:rgba(40,40,44,.55);
+  --card:rgba(255,255,255,.62); --solid:#ffffff; --glass-line:rgba(255,255,255,.65); --link:#0066cc; --accent:#1F9D55; --g1:#FFD60A; --g2:#34C759; --g3:#FF2D92; --accent-grad:linear-gradient(135deg,#FFD60A 0%,#34C759 50%,#FF2D92 100%); --dark-bg:rgba(0,0,0,.84); --dark-card:rgba(40,40,44,.55);
   --screen:#f2f2f7; --screen-card:#ffffff; --green:#34c759;
-  --blob1:#4285F4; --blob2:#D96570; --blob3:#9B72CB; --blob-op:.5; --alt:rgba(245,245,247,.55);
+  --blob1:#FFD60A; --blob2:#FF2D92; --blob3:#34C759; --blob-op:.45; --alt:rgba(245,245,247,.55);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#000000; --alt:#111114; --ink:#f5f5f7; --ink-2:#a1a1a6; --line:#3a3a3c;
-    --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#A48CFF; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
+    --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#5EE38B; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
     --screen:#1c1c1e; --screen-card:#2c2c2e; --alt:rgba(17,17,20,.5);
-    --blob1:#2b5fd0; --blob2:#a3465a; --blob3:#6f4fa8; --blob-op:.42;
+    --blob1:#b89a00; --blob2:#b0205f; --blob3:#1f8a45; --blob-op:.4;
   }
 }
 :root[data-theme="dark"]{
   --bg:#000000; --alt:#111114; --ink:#f5f5f7; --ink-2:#a1a1a6; --line:#3a3a3c;
-  --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#A48CFF; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
+  --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#5EE38B; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
   --screen:#1c1c1e; --screen-card:#2c2c2e; --alt:rgba(17,17,20,.5);
-  --blob1:#2b5fd0; --blob2:#a3465a; --blob3:#6f4fa8; --blob-op:.42;
+  --blob1:#b89a00; --blob2:#b0205f; --blob3:#1f8a45; --blob-op:.4;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:19px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -349,7 +349,7 @@ a:hover{text-decoration:underline}
       <div class="notch"></div>
       <div class="zz"><span>z</span><span>z</span><span>z</span></div>
       <div class="clock">
-        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#d2d2d7" stroke-width="2"/><line class="hand h" x1="50" y1="50" x2="50" y2="28" stroke="#1d1d1f" stroke-width="4" stroke-linecap="round"/><line class="hand m" x1="50" y1="50" x2="50" y2="18" stroke="#9B72CB" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="50" r="3" fill="#1d1d1f"/></svg>
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#d2d2d7" stroke-width="2"/><line class="hand h" x1="50" y1="50" x2="50" y2="28" stroke="#1d1d1f" stroke-width="4" stroke-linecap="round"/><line class="hand m" x1="50" y1="50" x2="50" y2="18" stroke="#34C759" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="50" r="3" fill="#1d1d1f"/></svg>
       </div>
       <div class="screen">
         <div class="toast"><div class="ic">C</div><div><b>Morning note is ready</b>Three things need you today.</div></div>
@@ -662,7 +662,7 @@ prompt      Your words to Claude, same as you would type in a chat</pre>
 <section>
   <div class="wrap">
     <h2>Loops, when once is not enough</h2>
-    <p class="sub">A loop is a job that does a thing, checks it, and does it again until it is right or until it has had enough tries</p>
+    <p class="sub">Think of cooking a sauce. You taste it. Not right? Add salt, taste again. Right? Serve it. A loop is Claude doing the same: try, check, try again, stop when it is right</p>
     <div class="loop-wrap">
       <svg class="loop" viewBox="0 0 300 300" aria-hidden="true">
         <circle class="ring" cx="150" cy="150" r="110"/>
@@ -673,11 +673,10 @@ prompt      Your words to Claude, same as you would type in a chat</pre>
         <circle class="done" cx="150" cy="150" r="30"/><text class="donetxt" x="150" y="155">Done</text>
       </svg>
       <div class="loop-steps">
-        <div class="st"><i>1</i><div><b>Do.</b> The job runs once.</div></div>
-        <div class="st"><i>2</i><div><b>Check.</b> A real test. Did the page load? Did the number change? Did the test pass?</div></div>
-        <div class="st"><i>3</i><div><b>Again or done.</b> Not right yet, go round again. Right, stop and tell you. Always with a limit, say five tries, so it can never run forever.</div></div>
+        <div class="st"><i>1</i><div><b>Do.</b> Claude does the job once. Say the job is "fix the broken link on my page". It fixes it.</div></div>
+        <div class="st"><i>2</i><div><b>Check.</b> Now it tests if that worked. Not a guess, a real test. It clicks the link. Does the page open? Yes or no.</div></div>
+        <div class="st"><i>3</i><div><b>Again, or done.</b> No? Back to step 1, try a different fix. Yes? Stop, and tell you "done". Plus one safety line: "give up after five goes and tell me". That way it can never run forever or burn money.</div></div>
       </div>
-    </div>
     <div class="loop-ex">
       <div class="lx"><div class="where">In Claude Code</div><h3>Type /loop and the job</h3><pre>/loop 10m check that mysite.com loads and the shop button works. If anything is broken, tell me and stop.</pre></div>
       <div class="lx"><div class="where">In Cowork</div><h3>An hourly task with a stop line</h3><pre>Every hour, look for new replies to my offer email. If there are any, draft answers. If there are none, do nothing and say "nothing new".</pre></div>
