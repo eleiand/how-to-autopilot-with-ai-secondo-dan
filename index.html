@@ -438,7 +438,7 @@ a:hover{text-decoration:underline}
 <section>
   <div class="wrap">
     <h2>Eight jobs worth handing over (in my opinion)</h2>
-    <p class="sub">Start with the first three. Add one more only when the last one is still useful</p>
+    <p class="sub">Start with the first three. Add one more only when the last one is still useful. Each prompt says where to look, what to do, what to ignore, and what shape the answer takes</p>
     <div class="jobs">
 
       <div class="job first">
@@ -446,7 +446,21 @@ a:hover{text-decoration:underline}
         <div class="when">Weekdays, 7am</div>
         <h3>Morning note</h3>
         <p class="kid">Before you wake up, it reads your emails and your diary. Then it writes you a tiny note about the day.</p>
-        <details><summary>Copy this prompt</summary><pre>Read my unread emails from the last 24 hours and today's calendar. Write me one note, under 150 words. Tell me the three things that need me today, anything that looks urgent or unhappy, and any meeting I am not ready for. Do not reply to anyone.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my morning assistant. Run every weekday at 7am.
+
+Look at: my unread emails from the last 24 hours, and today's and tomorrow's calendar.
+
+Do:
+1. Pick the three things that most need me today. Money, clients and deadlines come first.
+2. Flag anything that sounds urgent, unhappy or angry, even if it is short.
+3. For every meeting today, say who it is with and whether I have a note or an agenda for it. If I have nothing, say "not prepared".
+4. Note anything that arrived from a new person I have never emailed before.
+
+Ignore: newsletters, receipts, notifications from apps, and anything I have already replied to.
+
+Give me: one note, under 150 words, most important thing first. Use three short headings: Today, Watch out, Meetings. Plain English. No greetings.
+
+Rules: read only. Do not reply, forward, archive or delete anything. If there is nothing worth telling me, say "Quiet day" and stop.</pre></details>
       </div>
 
       <div class="job first">
@@ -454,7 +468,21 @@ a:hover{text-decoration:underline}
         <div class="when">Weekdays, 8am</div>
         <h3>Reply drafts</h3>
         <p class="kid">It writes the answers to your emails in pencil. You read them, fix them, and press send.</p>
-        <details><summary>Copy this prompt</summary><pre>For every email in my inbox that needs an answer, write a warm short reply and save it as a Gmail draft. Never send. Then list the drafts you made and any email you were not sure about.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my reply writer. Run every weekday at 8am.
+
+Look at: every email in my inbox from the last 3 days that is waiting for an answer from me. A client, a partner, a supplier, or anyone asking a direct question.
+
+Do:
+1. Write a reply for each one and save it as a draft in Gmail, in the same thread.
+2. Match my tone: warm, short, plain. First names. No corporate words. Say yes or no clearly. Suggest one next step.
+3. If a reply needs a fact I have not given you, such as a price, a date or a decision, write the draft anyway and put the gap in square brackets like [price].
+4. If an email is sensitive, a complaint, a legal matter or money owed, do not draft it. Add it to the list for me instead.
+
+Ignore: newsletters, automatic emails, anything I have already answered.
+
+Give me: a list of the drafts you made, one line each: who, what they asked, what your draft says. Then a second list called "Needs you" for the ones you left.
+
+Rules: never send. Drafts only. Never change my signature. If the inbox has nothing waiting, say "Nothing to answer" and stop.</pre></details>
       </div>
 
       <div class="job first">
@@ -462,7 +490,22 @@ a:hover{text-decoration:underline}
         <div class="when">Fridays, 4pm</div>
         <h3>Money check</h3>
         <p class="kid">Every Friday it counts the coins in the jar and tells you if there are more or fewer than last week.</p>
-        <details><summary>Copy this prompt</summary><pre>Look at Stripe and my bookings. Read only. Tell me: money in this week versus last week, new clients, sessions booked for next week, anyone with fewer than two sessions left, and anything that looks wrong. Under 120 words.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my Friday numbers person. Run every Friday at 4pm.
+
+Look at: Stripe payments and payouts for this week and last week, and my bookings list for next week. Read only.
+
+Do:
+1. Money in this week versus last week. Say the two numbers and whether it went up or down.
+2. New clients this week: names and what they bought.
+3. Sessions booked for next week, as a count, and any day that looks empty.
+4. Anyone whose package has two sessions or fewer left, so I can talk to them before they run out.
+5. Anything odd: a failed payment, a refund, a double charge, a booking with no payment.
+
+Ignore: test payments and anything marked as a demo account.
+
+Give me: under 150 words, numbers first, names second. Five short lines, one per point above. End with one sentence on what I should do on Monday.
+
+Rules: read only. Never touch a payment, refund or booking. Never email a client. If a number looks wrong, say so rather than guess.</pre></details>
       </div>
 
       <div class="job">
@@ -470,7 +513,21 @@ a:hover{text-decoration:underline}
         <div class="when">Weekdays, 9am</div>
         <h3>Who went quiet</h3>
         <p class="kid">It notices which people have not written back and reminds you to wave at them.</p>
-        <details><summary>Copy this prompt</summary><pre>Find emails I sent in the last 14 days that never got a reply, where I asked a question or made an offer. List the name, what I asked, and days waiting. Write a short friendly nudge for each one. Do not send.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my follow-up checker. Run every weekday at 9am.
+
+Look at: emails I sent in the last 14 days where I asked a question, made an offer, sent a quote or promised something, and nobody has replied.
+
+Do:
+1. List each one: name, what I asked or offered, how many days waiting.
+2. Skip anyone I emailed again after that, or who replied in another thread.
+3. Write a short friendly nudge for each one and save it as a Gmail draft in the same thread. Two or three sentences. Refer to what I said last time. Give them an easy way to say yes or no. Never sound annoyed.
+4. If someone has been waiting more than 10 days, suggest a different nudge: a phone call, or a small extra, rather than a third email.
+
+Ignore: newsletters I sent, group emails, and anyone who said they would come back to me by a date that has not passed yet.
+
+Give me: the list, longest waiting first, with the draft ready under each name. Under 200 words.
+
+Rules: never send. Drafts only. If nobody is waiting, say "Everyone has replied" and stop.</pre></details>
       </div>
 
       <div class="job">
@@ -478,7 +535,21 @@ a:hover{text-decoration:underline}
         <div class="when">Mondays, 9am</div>
         <h3>Competitor watch</h3>
         <p class="kid">Once a week it peeks over the fence and tells you if the neighbours built something new.</p>
-        <details><summary>Copy this prompt</summary><pre>Check the websites and Instagram pages of my main competitors (list them here). Tell me only what changed since last week: new prices, new products, new offers, big posts. If nothing changed, say "nothing new" and stop.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my competitor watcher. Run every Monday at 9am.
+
+Look at: the websites and Instagram pages of these competitors: [name and link, one per line]. Compare with what you saw last week.
+
+Do:
+1. Report only what changed: a new price, a new product, a new offer or discount, a big new post or reel, a new location, a change to their home page or booking flow.
+2. For each change, say what it is, where you saw it, and in one line why it might matter to me.
+3. If a competitor is running an offer, note the price and the end date.
+4. If one of them is getting a lot of comments or shares on something, say what it was about.
+
+Ignore: small wording changes, reposts, stories, and anything older than a week.
+
+Give me: under 150 words, one competitor per short paragraph. If nothing changed, say "Nothing new" and stop. Do not pad it out.
+
+Rules: read only. Never like, follow, comment or message anyone. Never buy anything.</pre></details>
       </div>
 
       <div class="job">
@@ -486,7 +557,21 @@ a:hover{text-decoration:underline}
         <div class="when">Mondays, 7am</div>
         <h3>Reviews</h3>
         <p class="kid">It reads what people said about you and tells you the nice bits and the sad bits.</p>
-        <details><summary>Copy this prompt</summary><pre>Look for new reviews or mentions of my business on Google and Instagram since last week. For each one give me the gist, the name if shown, and a two line thank you or reply draft. Put anything negative at the top.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my reputation watcher. Run every Monday at 7am.
+
+Look at: new reviews and mentions of my business since last Monday on Google, Instagram and anywhere else you can check. Search my business name and my own name.
+
+Do:
+1. Negative or mixed first. For each one give me the gist in one line, the name if shown, the star rating, and where it is.
+2. Then the positive ones, same shape.
+3. For every review, write a short reply I can post. Two lines. Thank them by name. For a negative one, say sorry once, do not argue, offer to talk in private, and give a way to reach us.
+4. If a review mentions a specific coach or session, say which one, so I can pass it on.
+
+Ignore: reviews I have already replied to, and spam.
+
+Give me: under 200 words. Negative at the top, in bold. If there is nothing new, say "No new reviews" and stop.
+
+Rules: never post a reply. Drafts only. Never reply to a reviewer in private on my behalf.</pre></details>
       </div>
 
       <div class="job">
@@ -494,7 +579,21 @@ a:hover{text-decoration:underline}
         <div class="when">Fridays, 5pm</div>
         <h3>What we decided</h3>
         <p class="kid">At the end of the week it writes down the choices you made, so you never have to remember them.</p>
-        <details><summary>Copy this prompt</summary><pre>Read my sent emails and calendar from this week. Write a short list of decisions I made and promises I gave, with the date and who to. Save it as a note called "Week of [date]" in my Decisions folder on Drive.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my memory. Run every Friday at 5pm.
+
+Look at: my sent emails, my calendar and my notes from Monday to today.
+
+Do:
+1. List every decision I made this week. A price, a yes or no, a plan, a change. One line each, with the date and who it was said to.
+2. List every promise I gave. What I said I would do, to whom, and by when. Mark any that are already late.
+3. List anything I said I would think about and have not come back to.
+4. Note anything a client asked for that I have not answered yet.
+
+Ignore: small talk, scheduling back and forth, and anything already recorded last week.
+
+Give me: a note called "Week of [Monday's date]" with four headings: Decided, Promised, Parked, Waiting on me. Save it to my Decisions folder on Google Drive. Under 300 words.
+
+Rules: read only. Never send anything. Never edit a past week's note, only add a new one. If the week was empty, still save the note and say so.</pre></details>
       </div>
 
       <div class="job">
@@ -502,7 +601,21 @@ a:hover{text-decoration:underline}
         <div class="when">First of the month</div>
         <h3>Bills sweep</h3>
         <p class="kid">Once a month it checks which toys you still pay for but never play with.</p>
-        <details><summary>Copy this prompt</summary><pre>Find every subscription receipt or invoice in my inbox from the last 35 days. List the service, the amount, and whether I used it this month if you can tell. Biggest first. Mark any that look like they could be cancelled.</pre></details>
+        <details><summary>Copy this prompt</summary><pre>You are my bills checker. Run on the first day of every month.
+
+Look at: every receipt, invoice or subscription email in my inbox from the last 35 days. Also look at Stripe and my bank export if I have shared one.
+
+Do:
+1. List every service I paid for: name, amount, monthly or yearly, and the date it renews.
+2. For each one, say whether I have used it this month if you can tell from my emails or calendar. If you cannot tell, say "unknown".
+3. Mark anything that looks like it could be cancelled: not used, a duplicate, a free trial that has started charging, or a price that went up.
+4. Add up the total for the month and compare with last month.
+
+Ignore: one-off purchases like travel, food and equipment, unless they are over [amount].
+
+Give me: a table, biggest amount first, then the total, then a short "Cancel or check" list. Under 250 words.
+
+Rules: read only. Never cancel, pay or change anything. Never click "unsubscribe". If a charge looks like fraud, put it at the very top in bold.</pre></details>
       </div>
 
     </div>
