@@ -10,20 +10,23 @@
 <style>
 :root{
   --bg:#ffffff; --alt:#f5f5f7; --ink:#1d1d1f; --ink-2:#6e6e73; --line:#d2d2d7;
-  --card:#ffffff; --link:#0066cc; --accent:#ff6a4d; --dark-bg:#000000; --dark-card:#1d1d1f;
+  --card:rgba(255,255,255,.62); --solid:#ffffff; --glass-line:rgba(255,255,255,.65); --link:#0066cc; --accent:#ff6a4d; --dark-bg:rgba(0,0,0,.84); --dark-card:rgba(40,40,44,.55);
   --screen:#f2f2f7; --screen-card:#ffffff; --green:#34c759;
+  --blob1:#ff8a6a; --blob2:#7fb0ff; --blob3:#ffd39a; --blob-op:.55; --alt:rgba(245,245,247,.55);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#000000; --alt:#111114; --ink:#f5f5f7; --ink-2:#a1a1a6; --line:#3a3a3c;
-    --card:#1d1d1f; --link:#2997ff; --accent:#ff7a5c; --dark-bg:#0b0b0d; --dark-card:#1d1d1f;
-    --screen:#1c1c1e; --screen-card:#2c2c2e;
+    --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#ff7a5c; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
+    --screen:#1c1c1e; --screen-card:#2c2c2e; --alt:rgba(17,17,20,.5);
+    --blob1:#c94f36; --blob2:#2c5bb8; --blob3:#8a5a2a; --blob-op:.4;
   }
 }
 :root[data-theme="dark"]{
   --bg:#000000; --alt:#111114; --ink:#f5f5f7; --ink-2:#a1a1a6; --line:#3a3a3c;
-  --card:#1d1d1f; --link:#2997ff; --accent:#ff7a5c; --dark-bg:#0b0b0d; --dark-card:#1d1d1f;
-  --screen:#1c1c1e; --screen-card:#2c2c2e;
+  --card:rgba(29,29,31,.55); --solid:#1d1d1f; --glass-line:rgba(255,255,255,.09); --link:#2997ff; --accent:#ff7a5c; --dark-bg:rgba(8,8,10,.86); --dark-card:rgba(44,44,48,.55);
+  --screen:#1c1c1e; --screen-card:#2c2c2e; --alt:rgba(17,17,20,.5);
+  --blob1:#c94f36; --blob2:#2c5bb8; --blob3:#8a5a2a; --blob-op:.4;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:19px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -172,6 +175,26 @@ a:hover{text-decoration:underline}
 .code pre{margin:0;font:14px/1.55 ui-monospace,Menlo,monospace;color:var(--ink);white-space:pre}
 @media (max-width:760px){.two{grid-template-columns:1fr}.gh{grid-template-columns:1fr 1fr}}
 
+
+/* moving colour wash + glass */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg i{position:absolute;border-radius:50%;filter:blur(90px);opacity:var(--blob-op);will-change:transform;display:block}
+.bg .k1{width:56vw;height:56vw;left:-14vw;top:-12vw;background:var(--blob1);animation:drift1 28s ease-in-out infinite alternate}
+.bg .k2{width:62vw;height:62vw;right:-20vw;top:18vh;background:var(--blob2);animation:drift2 34s ease-in-out infinite alternate}
+.bg .k3{width:50vw;height:50vw;left:18vw;bottom:-22vw;background:var(--blob3);animation:drift3 30s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(22vw,26vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-26vw,32vh) scale(.9)}}
+@keyframes drift3{to{transform:translate(20vw,-30vh) scale(1.2)}}
+.hero,section,.foot{position:relative;z-index:1}
+.tile,.blank,.job,.col,.rail,.code,.caps .cap,.bubble,.step5,.habit,.intro{backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}
+.mac,.menu,.form,.clock{background:var(--solid)}
+.intro{max-width:620px;margin:40px auto 0;background:var(--card);border-radius:28px;padding:30px 32px;text-align:left;font-size:19px;line-height:1.55}
+.intro p{margin:0 0 12px}
+.intro p:last-child{margin:0}
+.intro .sig{font-weight:600}
+@media (prefers-reduced-motion: reduce){.bg i{animation:none}}
+@media (max-width:760px){.intro{padding:24px 22px;font-size:18px}.bg i{filter:blur(60px)}}
+
 /* three steps */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
 .tile{background:var(--card);border-radius:24px;padding:30px 26px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.05)}
@@ -250,10 +273,17 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 
+<div class="bg"><i class="k1"></i><i class="k2"></i><i class="k3"></i></div>
 <div class="hero">
   <div class="eyebrow">How to Autopilot with AI (secondo Dan)</div>
   <h1>Your boring jobs.<br>Done while you sleep.</h1>
   <p class="lead">Tell Claude a job once. Tell it when. It does the job on its own and leaves the finished work for you to read.</p>
+  <div class="intro">
+    <p>Hi. I run a small business and I am not a developer. I was tired of doing the same little jobs every day: reading the inbox, chasing replies, counting the week.</p>
+    <p>So I taught Claude to do them for me while I sleep. It took an evening. This page shows you how, in plain words, the way I wish someone had shown me.</p>
+    <p>Read it top to bottom. Try the first job today. You will feel the difference tomorrow morning.</p>
+    <p class="sig">Dan</p>
+  </div>
   <div class="stage">
     <div class="phone">
       <div class="notch"></div>
@@ -544,7 +574,6 @@ jobs:
   </div>
 </section>
 
-<div class="foot">Sources: <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork">Anthropic help centre</a> · <a href="https://www.corporate-rebels.com/blog/musks-algorithm-to-cut-bureaucracy">Musk's five steps</a></div>
 
 <script>
 (function(){
