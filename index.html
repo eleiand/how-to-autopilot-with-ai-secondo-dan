@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
 @keyframes drift2{to{transform:translate(-26vw,32vh) scale(.9)}}
 @keyframes drift3{to{transform:translate(20vw,-30vh) scale(1.2)}}
 .hero,section,.foot{position:relative;z-index:1}
-.tile,.blank,.job,.col,.rail,.code,.caps .cap,.bubble,.step5,.habit,.intro,.rule,.lx,.loop-steps .st,.own .box,.gag .story,.about .box{backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}
+.tile,.blank,.job,.col,.rail,.code,.caps .cap,.bubble,.step5,.habit,.intro,.rule,.lx,.loop-steps .st,.own .box,.gag .story,.about .box,.need .n{backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}
 .mac,.menu,.form,.clock{background:var(--solid)}
 .intro{max-width:620px;margin:40px auto 0;background:var(--card);border-radius:28px;padding:30px 32px;text-align:left;font-size:19px;line-height:1.55}
 .intro p{margin:0 0 12px}
@@ -260,6 +260,13 @@ a:hover{text-decoration:underline}
 .about .box{background:var(--card);border-radius:24px;padding:22px 24px}
 .about pre{margin:0;white-space:pre-wrap;font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;color:var(--ink)}
 .about .cap{color:var(--ink-2);font-size:15px;margin-bottom:10px}
+
+
+.need{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:900px;margin:40px auto 0}
+.need .n{background:var(--card);border-radius:18px;padding:18px 18px 16px;font-size:16px;color:var(--ink-2)}
+.need .n b{display:block;color:var(--ink);font-size:18px;margin-bottom:4px}
+.need .n .cost{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background-image:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:760px){.need{grid-template-columns:1fr 1fr}}
 
 /* three steps */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
@@ -973,6 +980,13 @@ prompt      Your words to Claude, same as you would type in a chat</pre>
   <div class="wrap">
     <h2>Make your own</h2>
     <p class="sub">Copy this, fill the coloured gaps, paste it into Claude. You get a page like this one, with your words in it</p>
+    <p class="sub" style="margin-top:40px">What you need to have first. Four things, and only one of them costs money</p>
+    <div class="need">
+      <div class="n"><b>A Claude plan</b>Pro or Max. This is what does the thinking, the writing and the drawing. Also unlocks the Scheduled tasks above.<span class="cost">About £18 a month</span></div>
+      <div class="n"><b>The Claude app on your Mac</b>Download it from claude.ai. Cowork lives inside it. Then install Claude Code, which is the version that can touch files and GitHub. Claude will talk you through it.<span class="cost">Free with the plan</span></div>
+      <div class="n"><b>A GitHub account</b>Sign up at github.com. This is where the page file lives and what puts it on the internet. A free account is enough.<span class="cost">Free</span></div>
+      <div class="n"><b>Nothing else</b>No web host, no domain, no designer, no developer, no photos. If you want your own address later, like yourname.com, that is about £10 a year and Claude can connect it.<span class="cost">Zero</span></div>
+    </div>
     <div class="own">
       <div class="box">
 <pre id="ownPrompt">Build me a one-page website as a single HTML file. Style it like an Apple product page: white and light grey, big centred headlines, rounded cards, system font, lots of space. Add a slow moving colour wash behind the page and frosted glass cards on top. Write everything in simple English, short sentences, British spelling, no em dashes, no emojis.
