@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
 @keyframes drift2{to{transform:translate(-26vw,32vh) scale(.9)}}
 @keyframes drift3{to{transform:translate(20vw,-30vh) scale(1.2)}}
 .hero,section,.foot{position:relative;z-index:1}
-.tile,.blank,.job,.col,.rail,.code,.caps .cap,.bubble,.step5,.habit,.intro,.rule,.lx,.loop-steps .st,.own .box,.gag .story{backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}
+.tile,.blank,.job,.col,.rail,.code,.caps .cap,.bubble,.step5,.habit,.intro,.rule,.lx,.loop-steps .st,.own .box,.gag .story,.about .box{backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}
 .mac,.menu,.form,.clock{background:var(--solid)}
 .intro{max-width:620px;margin:40px auto 0;background:var(--card);border-radius:28px;padding:30px 32px;text-align:left;font-size:19px;line-height:1.55}
 .intro p{margin:0 0 12px}
@@ -254,6 +254,12 @@ a:hover{text-decoration:underline}
 .copy{color:#fff;background-color:transparent}
 .job.first{outline-color:var(--g2)}
 .grad{background-image:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+
+.about{max-width:720px;margin:36px auto 0}
+.about .box{background:var(--card);border-radius:24px;padding:22px 24px}
+.about pre{margin:0;white-space:pre-wrap;font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;color:var(--ink)}
+.about .cap{color:var(--ink-2);font-size:15px;margin-bottom:10px}
 
 /* three steps */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
@@ -438,7 +444,25 @@ a:hover{text-decoration:underline}
 <section>
   <div class="wrap">
     <h2>Eight jobs worth handing over (in my opinion)</h2>
-    <p class="sub">Start with the first three. Add one more only when the last one is still useful. Each prompt says where to look, what to do, what to ignore, and what shape the answer takes</p>
+    <p class="sub">Start with the first three. Add one more only when the last one is still useful. Each prompt says where to look, what to do, what to ignore, what comes first, what shape the answer takes, and shows an example</p>
+    <div class="about">
+      <div class="box">
+        <div class="cap">First, this. Fill the gaps once and paste it at the top of every prompt. It tells Claude who you are, so "important" and "unhappy" stop being guesses</div>
+<pre>About me
+My name is <span class="hole">[name]</span>. I run <span class="hole">[business name]</span>, a <span class="hole">[what it is, in one line]</span> in <span class="hole">[town]</span>.
+We sell <span class="hole">[main things you sell and rough prices]</span>.
+A typical client is <span class="hole">[who they are, what they want]</span>.
+Money and clients matter most. Then deadlines. Then everything else.
+Busiest days: <span class="hole">[days]</span>. I work from <span class="hole">[start]</span> to <span class="hole">[end]</span>, London time.
+People I always want to hear about: <span class="hole">[names]</span>.
+People to leave out: <span class="hole">[names or types, for example newsletters and recruiters]</span>.
+How I write: warm, short, plain, first names, no corporate words, no exclamation marks, British spelling.
+Two lines in my voice: "<span class="hole">[a real sentence you would write]</span>" and "<span class="hole">[another one]</span>".
+Tools you can read: <span class="hole">[Gmail, Google Calendar, Drive, Stripe, my bookings sheet]</span>.
+If you cannot reach one of them, say "Could not reach [tool]" at the top and carry on with the rest. Never guess a number.
+You are done when the answer is saved or shown, is under the word limit, and follows the Rules.</pre>
+      </div>
+    </div>
     <div class="jobs">
 
       <div class="job first">
@@ -458,9 +482,25 @@ Do:
 
 Ignore: newsletters, receipts, notifications from apps, and anything I have already replied to.
 
+Priorities when things clash: a client complaint beats a supplier invoice. Money owed to me beats money I owe. Today beats next week.
+
 Give me: one note, under 150 words, most important thing first. Use three short headings: Today, Watch out, Meetings. Plain English. No greetings.
 
-Rules: read only. Do not reply, forward, archive or delete anything. If there is nothing worth telling me, say "Quiet day" and stop.</pre></details>
+Rules: read only. Do not reply, forward, archive or delete anything. If there is nothing worth telling me, say "Quiet day" and stop.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+Today
+1. Reply to Sarah about the price for two more months. She has asked twice.
+2. Pay the hall invoice, due Friday.
+3. Confirm Thursday with the new coach.
+Watch out
+Mark's email sounds annoyed about the cancelled session. Read it first.
+Meetings
+10am Anna, prepared. 3pm bank, not prepared, no agenda.</pre></details>
       </div>
 
       <div class="job first">
@@ -480,9 +520,20 @@ Do:
 
 Ignore: newsletters, automatic emails, anything I have already answered.
 
+Priorities when things clash: a paying client beats a new enquiry. A question with a deadline beats one without.
+
 Give me: a list of the drafts you made, one line each: who, what they asked, what your draft says. Then a second list called "Needs you" for the ones you left.
 
-Rules: never send. Drafts only. Never change my signature. If the inbox has nothing waiting, say "Nothing to answer" and stop.</pre></details>
+Rules: never send. Drafts only. Never change my signature. If the inbox has nothing waiting, say "Nothing to answer" and stop.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example draft:
+"Hi Sarah, thanks for asking. Yes, two more months works. Same time, same price. Shall I put Tuesdays and Thursdays in from the 12th? Dan"
+Example list line:
+Sarah, asked about two more months, draft says yes and offers Tuesdays and Thursdays from the 12th.</pre></details>
       </div>
 
       <div class="job first">
@@ -503,9 +554,23 @@ Do:
 
 Ignore: test payments and anything marked as a demo account.
 
+Priorities when things clash: report a failed or double payment before anything else. Then money in. Then bookings.
+
 Give me: under 150 words, numbers first, names second. Five short lines, one per point above. End with one sentence on what I should do on Monday.
 
-Rules: read only. Never touch a payment, refund or booking. Never email a client. If a number looks wrong, say so rather than guess.</pre></details>
+Rules: read only. Never touch a payment, refund or booking. Never email a client. If a number looks wrong, say so rather than guess.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+Money in: £2,140 this week, £1,880 last week. Up.
+New clients: Priya (10 sessions), Tom (assessment).
+Next week: 22 sessions booked. Wednesday afternoon is empty.
+Running low: Sarah has 2 sessions left. Mark has 1.
+Odd: one failed payment from Tom on Tuesday, not retried.
+Monday: message Sarah and Mark about renewing, and check Tom's card.</pre></details>
       </div>
 
       <div class="job">
@@ -525,9 +590,21 @@ Do:
 
 Ignore: newsletters I sent, group emails, and anyone who said they would come back to me by a date that has not passed yet.
 
+Priorities when things clash: the biggest offer first, then the longest wait.
+
 Give me: the list, longest waiting first, with the draft ready under each name. Under 200 words.
 
-Rules: never send. Drafts only. If nobody is waiting, say "Everyone has replied" and stop.</pre></details>
+Rules: never send. Drafts only. If nobody is waiting, say "Everyone has replied" and stop.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+Priya, quote for 10 sessions, 12 days waiting. Suggest a call, not a third email.
+Draft: "Hi Priya, just checking you got the quote for the ten sessions. No rush at all. If it is easier, I can call you for two minutes this week. Dan"
+Tom, asked if Thursday works, 4 days waiting.
+Draft: "Hi Tom, does Thursday at 6 still work for you? A quick yes or no is perfect. Dan"</pre></details>
       </div>
 
       <div class="job">
@@ -547,9 +624,20 @@ Do:
 
 Ignore: small wording changes, reposts, stories, and anything older than a week.
 
+Priorities when things clash: a price change beats a new post. A new product beats a new offer.
+
 Give me: under 150 words, one competitor per short paragraph. If nothing changed, say "Nothing new" and stop. Do not pad it out.
 
-Rules: read only. Never like, follow, comment or message anyone. Never buy anything.</pre></details>
+Rules: read only. Never like, follow, comment or message anyone. Never buy anything.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+FitLab: dropped their intro offer from £49 to £39 until 30 September. Matters because it is now below ours.
+Move Studio: new reformer class on Saturdays. Post got 140 comments, mostly asking about price.
+Others: nothing new.</pre></details>
       </div>
 
       <div class="job">
@@ -569,9 +657,20 @@ Do:
 
 Ignore: reviews I have already replied to, and spam.
 
+Priorities when things clash: a negative review with a name beats everything. Then a negative one without a name. Then the rest.
+
 Give me: under 200 words. Negative at the top, in bold. If there is nothing new, say "No new reviews" and stop.
 
-Rules: never post a reply. Drafts only. Never reply to a reviewer in private on my behalf.</pre></details>
+Rules: never post a reply. Drafts only. Never reply to a reviewer in private on my behalf.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example reply to a negative review:
+"Hi Mark, thank you for telling us, and sorry the session did not feel right. We would like to put it right. Could you message us on 020 0000 0000 or reply here and we will call you? Dan"
+Example reply to a positive one:
+"Thank you, Anna. Lovely to hear the back pain is easing. See you Thursday. Dan"</pre></details>
       </div>
 
       <div class="job">
@@ -591,9 +690,25 @@ Do:
 
 Ignore: small talk, scheduling back and forth, and anything already recorded last week.
 
+Priorities when things clash: a promise to a client beats a plan for myself. Anything late goes first.
+
 Give me: a note called "Week of [Monday's date]" with four headings: Decided, Promised, Parked, Waiting on me. Save it to my Decisions folder on Google Drive. Under 300 words.
 
-Rules: read only. Never send anything. Never edit a past week's note, only add a new one. If the week was empty, still save the note and say so.</pre></details>
+Rules: read only. Never send anything. Never edit a past week's note, only add a new one. If the week was empty, still save the note and say so.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+Decided
+Tue 2 Sep: keep the assessment at £89 until January (to Anna).
+Promised
+Wed 3 Sep: send Priya the programme by Friday. LATE.
+Parked
+Thu 4 Sep: whether to add a Saturday class. No decision yet.
+Waiting on me
+Tom asked for a receipt on Monday. Not sent.</pre></details>
       </div>
 
       <div class="job">
@@ -613,9 +728,23 @@ Do:
 
 Ignore: one-off purchases like travel, food and equipment, unless they are over [amount].
 
+Priorities when things clash: anything that looks like fraud first. Then a price rise. Then things not used.
+
 Give me: a table, biggest amount first, then the total, then a short "Cancel or check" list. Under 250 words.
 
-Rules: read only. Never cancel, pay or change anything. Never click "unsubscribe". If a charge looks like fraud, put it at the very top in bold.</pre></details>
+Rules: read only. Never cancel, pay or change anything. Never click "unsubscribe". If a charge looks like fraud, put it at the very top in bold.
+
+If you cannot reach one of the tools, say "Could not reach [tool]" at the top and do the rest. Never guess a number.
+
+You are done when the answer is shown or saved, is under the word limit, and follows the Rules.
+
+Example answer:
+Service | Amount | Renews | Used this month
+Booking app | £49 monthly | 1 Oct | yes
+Design tool | £20 monthly | 14 Oct | unknown
+Music licence | £120 yearly | 3 Oct | yes
+Total: £312 this month, £292 last month. Up £20: the design tool price rose.
+Cancel or check: design tool (not seen in any email or calendar this month).</pre></details>
       </div>
 
     </div>
