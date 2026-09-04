@@ -208,6 +208,16 @@ a:hover{text-decoration:underline}
 .pre.t,.pre.story{transform:translateY(40px) scale(.96)}
 .in.t,.in.story{transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
 
+
+/* make your own */
+.own{max-width:720px;margin:48px auto 0}
+.own .box{background:var(--card);border-radius:24px;padding:22px 24px;position:relative}
+.own pre{margin:0;white-space:pre-wrap;font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;color:var(--ink)}
+.own .hole{background:var(--accent);color:#fff;border-radius:6px;padding:0 6px;font-weight:600}
+.copy{display:inline-flex;align-items:center;gap:8px;margin:18px auto 0;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:12px 22px;font:600 17px -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;cursor:pointer}
+.copy:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.own .tip{color:var(--ink-2);font-size:16px;margin-top:14px;text-align:center}
+
 /* three steps */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
 .tile{background:var(--card);border-radius:24px;padding:30px 26px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.05)}
@@ -609,7 +619,59 @@ jobs:
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <h2>Make your own.</h2>
+    <p class="sub">Copy this, fill the coloured gaps, paste it into Claude. You get a page like this one, with your words in it.</p>
+    <div class="own">
+      <div class="box">
+<pre id="ownPrompt">Build me a one-page website as a single HTML file. Style it like an Apple product page: white and light grey, big centred headlines, rounded cards, system font, lots of space. Add a slow moving colour wash behind the page and frosted glass cards on top. Write everything in simple English, short sentences, British spelling, no em dashes, no emojis.
+
+Name the page: <span class="hole">[page name]</span>
+
+Sections, in this order:
+
+1. Hero. Headline: <span class="hole">[a punchy two-line headline]</span>. One line under it that says what the page does. Then a short intro card from me. I am <span class="hole">[your name]</span>, I <span class="hole">[what you do]</span>, and I am not a developer. I was tired of <span class="hole">[the boring jobs you hated]</span>. Under the intro, draw a floating phone in code showing a list of scheduled tasks, with a ticking clock and sleeping "zzz" next to it.
+
+2. "Think of a helper who never gets tired." Explain the idea so a five year old gets it. Add a chat bubble that types itself.
+
+3. "Set one up in four clicks." Draw a Mac window in code with a cursor that moves through the four clicks on a loop, with numbered arrows and four step cards that light up in time. Steps: <span class="hole">[your four steps]</span>.
+
+4. "Every job has four blanks." When, Look at, Do, Give me. Four glass tiles.
+
+5. "Jobs worth handing over." Cards for these jobs, each with a one-line kid version and a hidden "Copy this prompt" with the full prompt: <span class="hole">[list three to eight jobs, one per line]</span>. Mark the first three "Start here".
+
+6. A black section: "My top 5 rules for agents." The rules: <span class="hole">[your five rules, or keep: ask if the job is needed, delete it if you can, make it simpler, make it faster, only now automate it]</span>.
+
+7. "Two places to run your helper." Claude versus GitHub, good and not so good for each, in plain words, and a rule of thumb.
+
+8. "Do it in GitHub in five steps." With the small timer file included.
+
+9. "Keep it safe." Four short rules, then a small facts table.
+
+10. A long-scroll joke. Two empty screens, then one line per screen that rises into view: <span class="hole">[your lines, for example: Still there? / In case you are wondering / how I did this / keep / scrolling]</span>. End with "Okay, just kidding." and a card that tells how this page was made in one chat.
+
+11. "Make your own." This same prompt, with copy button, so the reader can do it too.
+
+Rules: draw all pictures in code, no photo files. Animations start from a visible state and switch off if the reader has reduce motion on. Every card is the same shape. Keep it under one file. When done, put it on GitHub Pages and give me the link.</pre>
+      </div>
+      <button class="copy" id="copyBtn" type="button">Copy the prompt</button>
+      <p class="tip">Paste it into the Claude app. Then just talk. "Make it simpler." "Change the colour." "Add a job." One sentence at a time.</p>
+    </div>
+  </div>
+</section>
+
 <script>
+(function(){
+  var b=document.getElementById('copyBtn'), p=document.getElementById('ownPrompt');
+  if(!b||!p) return;
+  b.addEventListener('click', function(){
+    var txt=p.innerText;
+    function ok(){ b.textContent='Copied'; setTimeout(function(){ b.textContent='Copy the prompt'; },2000); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(p); var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(r); try{ document.execCommand('copy'); ok(); }catch(e){ b.textContent='Select and copy by hand'; } }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(ok, fallback); } else { fallback(); }
+  });
+})();
 (function(){
   var mac=document.getElementById('mac'), box=mac&&mac.parentNode;
   function fit(){ if(!box) return; mac.style.transform='scale('+(box.clientWidth/760)+')'; }
